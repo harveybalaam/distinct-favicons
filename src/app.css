@@ -30,23 +30,19 @@
   --crust: oklch(0.906 0.012 264.507);
 
   --bg: var(--mantle);
-  --border: var(--mantle);
-  --code-bg: var(--mantle);
-  /* --accent: var(); */
-  /* --accent-bg: var(); */
-  /* --accent-border: var(); */
+  --border: var(--surface-1);
+  --code-bg: var(--crust);
 
-  --shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
-
-  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
-  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
   color-scheme: light dark;
   color: var(--text);
   background: var(--bg);
+
+  --popup-width: 384px;
+  --popup-height: 512px;
+}
+
+html > body {
+  font-family: system-ui, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -54,14 +50,19 @@
 }
 
 html {
-  height: 512px;
-  width: 384px;
-  min-height: 100%;
-  min-width: 100%;
+  height: var(--popup-height);
+  width: var(--popup-width);
 }
 
 html,
 body {
   padding: 0;
+  margin: 0;
+  color: var(--text);
+}
+
+body,
+#app {
+  height: 100%;
   margin: 0;
 }
