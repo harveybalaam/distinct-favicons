@@ -35,6 +35,16 @@
     cursor: pointer;
   }
 
+  button.icon-btn:focus-visible {
+    transition-property: background-color, border, border-radius;
+  }
+
+  button.icon-btn:hover {
+    background-color: oklch(from var(--sky) l c h / 20%);
+    border-color: var(--sky);
+    color: var(--sky);
+  }
+
   button.icon-btn.icon-btn-md {
     height: 2rem;
     width: 2rem;
@@ -43,12 +53,6 @@
   button.icon-btn.icon-btn-sm {
     height: 1.75rem;
     width: 1.75rem;
-  }
-
-  button.icon-btn:hover {
-    background-color: oklch(from var(--sky) l c h / 20%);
-    border-color: var(--sky);
-    color: var(--sky);
   }
 
   button.icon-btn.icon-btn-md:hover {
