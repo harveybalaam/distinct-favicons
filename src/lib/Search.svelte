@@ -5,7 +5,7 @@
 <search>
   <div class="rule-search-container">
     <SearchIcon size={16} />
-    <input id="rule-search" type="text" placeholder="Search rules...">
+    <input id="rule-search" type="text" placeholder="Search rules..." />
   </div>
 </search>
 

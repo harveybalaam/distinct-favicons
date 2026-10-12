@@ -13,11 +13,11 @@
     ariaLabel,
     icon: Icon,
     text,
-    type = "button" 
+    type = "button",
   }: ButtonProps = $props();
 </script>
 
-<button type={type} class:has-icon={!!Icon} aria-label={ariaLabel}>
+<button {type} class:has-icon={!!Icon} aria-label={ariaLabel}>
   {#if Icon}
     <Icon size={16} />
   {/if}
@@ -53,7 +53,7 @@
   }
 
   button:hover {
-    background-color: oklch(from var(--sky) l   c h / 20%);
+    background-color: oklch(from var(--sky) l c h / 20%);
     color: var(--sky);
 
     border-radius: 0.65rem;

@@ -5,7 +5,6 @@
   import Search from "./Search.svelte";
 </script>
 
-
 <div class="title-bar">
   <div>
     <h2>Rules</h2>
