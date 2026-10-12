@@ -7,11 +7,7 @@
     size?: "sm" | "md";
   }
 
-  const {
-    ariaLabel,
-    icon: Icon,
-    size = "md"
-  }: IconButtonProps = $props();
+  const { ariaLabel, icon: Icon, size = "md" }: IconButtonProps = $props();
 </script>
 
 <button class={`icon-btn icon-btn-${size}`} aria-label={ariaLabel}>
