@@ -9,6 +9,7 @@ export default defineConfig({
     suspicious: "warn",
   },
   rules: {
+    "eslint/no-magic-numbers": "off",
     "eslint/no-unused-vars": "error",
     "eslint/one-var": "off",
     "unicorn/filename-case": "off",
