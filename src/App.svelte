@@ -1,13 +1,11 @@
 <script lang="ts">
   import Header from "./lib/Header.svelte";
-  import TitleBar from "./lib/TitleBar.svelte";
+  import RuleList from "./lib/RuleList.svelte";
 </script>
 
 <div class="main-content">
   <Header />
-  <div class="rules-container">
-    <TitleBar />
-  </div>
+  <RuleList />
 </div>
 
 <style>
@@ -35,19 +33,9 @@
     }
   }
 
-  .main-content,
-  .rules-container {
+  .main-content {
     display: flex;
     flex-direction: column;
-  }
-
-  .main-content {
     height: 100%;
-  }
-
-  .rules-container {
-    flex: 1;
-    padding: 1rem;
-    min-height: 0;
   }
 </style>
