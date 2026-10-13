@@ -18,7 +18,7 @@
     background-color: var(--bg);
     color: var(--surface-2);
 
-    padding: 0.5rem;
+    padding: 0 0.5rem 0 0.5rem;
 
     border: 1px solid var(--border);
     border-radius: 0.75rem;
@@ -26,14 +26,19 @@
 
   .rule-search-container:focus-within {
     outline: solid 1px var(--sky);
+    outline-offset: -1px;
+    box-shadow:
+      oklch(from var(--sky) l c h / 20%) 0px 0px 3px 2px,
+      oklch(from var(--sky) l c h / 15%) 0px 0px 6px 2px;
   }
 
   input#rule-search {
     width: 100%;
 
+    padding: 0.5rem 0 0.5rem 0;
+
     background: none;
     border: none;
     outline: none;
-    padding: 0;
   }
 </style>
