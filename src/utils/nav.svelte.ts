@@ -4,21 +4,25 @@ export type Route =
   | { name: "list" }
   | { name: "settings" };
 
-const stack = $state<Route[]>([{ name: "list" }]);
+export const createNav = () => {
+  const stack = $state<Route[]>([{ name: "list" }]);
 
-export const nav = {
-  back() {
-    if (stack.length > 1) {
-      stack.pop();
-    }
-  },
-  get canGoBack(): boolean {
-    return stack.length > 1;
-  },
-  get current(): Route {
-    return stack.at(-1) ?? { name: "list" };
-  },
-  push(route: Route) {
-    stack.push(route);
-  },
+  return {
+    back() {
+      if (stack.length > 1) {
+        stack.pop();
+      }
+    },
+    get canGoBack(): boolean {
+      return stack.length > 1;
+    },
+    get current(): Route {
+      return stack.at(-1) ?? { name: "list" };
+    },
+    push(route: Route) {
+      stack.push(route);
+    },
+  };
 };
+
+export const nav = createNav();
