@@ -5,7 +5,7 @@ describe("nav", () => {
   let nav = createNav();
   beforeEach(() => (nav = createNav()));
 
-  it("intialises to the list route", () => {
+  it("initialises to the list route", () => {
     expect(nav.current).toEqual({ name: "list" });
     expect(nav.canGoBack).toBe(false);
   });
