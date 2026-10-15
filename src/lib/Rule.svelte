@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ChevronRightIcon } from "@lucide/svelte";
+  import { ChevronRightIcon, ImageIcon } from "@lucide/svelte";
 
   interface RuleProps {
     enabled: boolean;
@@ -11,6 +11,9 @@
 </script>
 
 <div class="favicon-rule" class:favicon-rule-disabled={!enabled}>
+  <span class="favicon-preview">
+    <ImageIcon size={22} />
+  </span>
   <div class="favicon-rule-details">
     <button class="favicon-rule-title">
       <h3>{name}</h3>
@@ -32,6 +35,20 @@
     margin: 0;
     overflow-x: auto;
     text-overflow: ellipsis;
+  }
+
+  .favicon-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2rem;
+    height: 2rem;
+
+    border: 2px dashed var(--border);
+    border-radius: 0.75rem;
+
+    color: var(--border);
   }
 
   .favicon-rule {
