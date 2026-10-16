@@ -38,14 +38,13 @@
     color: var(--text);
 
     margin: 0;
-    overflow-x: auto;
-    text-overflow: ellipsis;
   }
 
   .favicon-preview {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 
     width: 2rem;
     height: 2rem;
@@ -70,9 +69,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     flex: 1;
-
     gap: 0.25rem;
   }
 
@@ -86,20 +83,20 @@
     align-items: center;
     gap: 0.125rem;
 
+    margin-right: 0.25rem;
     padding: 0;
+
+    text-align: start;
+    overflow-wrap: anywhere;
 
     background: none;
     border: none;
     border-radius: 0.25rem;
 
     outline-offset: 2px;
-
-    transition-property: gap;
-    transition-duration: 200ms;
   }
 
   .favicon-rule-title:hover {
-    gap: 0.375rem;
     cursor: pointer;
   }
 
@@ -109,12 +106,13 @@
 
     color: var(--overlay-0);
 
-    transition-property: color;
+    transition-property: transform, color;
     transition-duration: 200ms;
   }
 
   .favicon-rule-title:hover > span {
     color: var(--text);
+    transform: translate(0.25rem);
   }
 
   .favicon-rule-pattern {
