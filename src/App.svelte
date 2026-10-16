@@ -8,7 +8,7 @@
 
 <div class="main-content">
   <Header />
-  {#if route.name == "list"}
+  {#if route.name === "list"}
     <RuleList />
   {/if}
 </div>
