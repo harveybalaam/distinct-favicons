@@ -1,5 +1,6 @@
 <script lang="ts">
   import { ChevronRightIcon, ImageIcon } from "@lucide/svelte";
+  import Switch from "./inputs/Switch.svelte";
 
   interface RuleProps {
     enabled: boolean;
@@ -23,6 +24,10 @@
     </button>
     <span class="favicon-rule-pattern">{rulePattern}</span>
   </div>
+  <Switch
+    name="enabled"
+    ariaLabel={`${enabled ? "Disable" : "Enable"} ${name}`}
+  />
 </div>
 
 <style>
@@ -71,7 +76,8 @@
     gap: 0.25rem;
   }
 
-  .favicon-rule.favicon-rule-disabled {
+  /* ignores switch due to scoped styles */
+  .favicon-rule.favicon-rule-disabled > * {
     opacity: 60%;
   }
 
