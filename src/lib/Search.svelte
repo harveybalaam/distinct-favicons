@@ -27,9 +27,6 @@
   .rule-search-container:focus-within {
     outline: solid 1px var(--sky);
     outline-offset: -1px;
-    box-shadow:
-      oklch(from var(--sky) l c h / 20%) 0px 0px 3px 2px,
-      oklch(from var(--sky) l c h / 15%) 0px 0px 6px 2px;
   }
 
   input#rule-search {
