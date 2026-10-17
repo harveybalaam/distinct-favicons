@@ -33,6 +33,9 @@
   });
 </script>
 
-<Story name="Medium" args={{ icon: SettingsIcon }} />
+<Story name="Medium" args={{ ariaLabel: "IconButton", icon: SettingsIcon }} />
 
-<Story name="Small" args={{ icon: SettingsIcon, size: "sm" }} />
+<Story
+  name="Small"
+  args={{ ariaLabel: "IconButton", icon: SettingsIcon, size: "sm" }}
+/>
