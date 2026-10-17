@@ -8,6 +8,7 @@ const config: StorybookConfig = {
     "@storybook/addon-docs",
   ],
   framework: "@storybook/svelte-vite",
+  staticDirs: ["./public"],
   stories: ["../src/**/*.stories.@(js|ts|svelte)"],
 };
 
