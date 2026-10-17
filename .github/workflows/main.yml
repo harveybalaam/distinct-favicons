@@ -23,7 +23,7 @@ jobs:
           - fmt:check
           - lint
           - check
-          - test
+          - test:unit
           - build
     steps:
       - name: Checkout branch

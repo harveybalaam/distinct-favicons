@@ -40,6 +40,7 @@
     background-color: oklch(from var(--text) l c h / 10%);
     color: var(--text);
 
+    border: 1px solid var(--border);
     border-radius: 1rem;
 
     cursor: pointer;

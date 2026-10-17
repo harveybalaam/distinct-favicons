@@ -38,4 +38,8 @@
     border: none;
     outline: none;
   }
+
+  input#rule-search:focus-visible {
+    outline: none;
+  }
 </style>
