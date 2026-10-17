@@ -4,6 +4,7 @@
   import { nav as navRouter } from "../utils/nav.svelte";
 
   const route = $derived(navRouter.current);
+  const isSettingsRoute = $derived(route.name === "settings");
 
   const handleHeaderButtonClick = () => {
     if (route.name !== "settings") {
@@ -24,7 +25,8 @@
   <IconButton
     ariaLabel="Settings"
     onClick={handleHeaderButtonClick}
-    icon={route.name === "settings" ? XIcon : SettingsIcon}
+    icon={isSettingsRoute ? XIcon : SettingsIcon}
+    variant={isSettingsRoute ? "destructive" : "primary"}
   />
 </nav>
 
