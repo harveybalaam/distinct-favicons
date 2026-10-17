@@ -24,7 +24,6 @@
     "@lucide/svelte": "^1.52.0"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "latest",
     "@storybook/addon-a11y": "^10.6.2",
     "@storybook/addon-docs": "^10.6.2",
     "@storybook/addon-svelte-csf": "latest",
