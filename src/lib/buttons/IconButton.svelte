@@ -3,11 +3,14 @@
 
   type IconButtonSizes = "sm" | "md";
 
+  type IconButtonVariants = "primary" | "destructive";
+
   interface IconButtonProps {
     ariaLabel?: string;
     icon: LucideIcon;
     onClick: () => void;
     size?: IconButtonSizes;
+    variant?: IconButtonVariants;
   }
 
   const iconSizeMap = {
@@ -20,12 +23,13 @@
     icon: Icon,
     onClick,
     size = "md",
+    variant = "primary",
   }: IconButtonProps = $props();
 </script>
 
 <button
   aria-label={ariaLabel}
-  class={`icon-btn icon-btn-${size}`}
+  class={`icon-btn icon-btn-${size} icon-btn-${variant}`}
   onclick={onClick}
 >
   <Icon size={iconSizeMap[size]} />
@@ -53,12 +57,6 @@
     transition-property: background-color, border, border-radius;
   }
 
-  button.icon-btn:hover {
-    background-color: oklch(from var(--sky) l c h / 20%);
-    border-color: var(--sky);
-    color: var(--sky);
-  }
-
   button.icon-btn.icon-btn-md {
     height: 2rem;
     width: 2rem;
@@ -75,5 +73,17 @@
 
   button.icon-btn.icon-btn-sm:hover {
     border-radius: 0.65rem;
+  }
+
+  button.icon-btn.icon-btn-primary:hover {
+    background-color: oklch(from var(--sky) l c h / 20%);
+    border-color: var(--sky);
+    color: var(--sky);
+  }
+
+  button.icon-btn.icon-btn-destructive:hover {
+    background-color: oklch(from var(--red) l c h / 20%);
+    border-color: var(--red);
+    color: var(--red);
   }
 </style>
