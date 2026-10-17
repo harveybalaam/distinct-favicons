@@ -26,6 +26,7 @@
     transition-property: all;
     transition: 200ms;
 
+    border: 1px solid var(--border);
     border-radius: 1rem;
 
     cursor: pointer;

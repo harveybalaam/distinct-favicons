@@ -79,27 +79,40 @@
   }
 }
 
-html > body {
+:root:has(#app) {
+  height: var(--popup-height);
+  width: var(--popup-width);
+
+  padding: 0;
+  margin: 0;
+  color: var(--text);
+
   font-family: system-ui, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  *:focus-visible {
+    outline: solid 1px var(--sky);
+    outline-offset: -1px;
+  }
+
+  input {
+    color: var(--text);
+    font-size: 0.875rem;
+  }
+
+  input::placeholder {
+    color: var(--surface-2);
+  }
+
+  button:active {
+    outline: none;
+  }
 }
 
-html {
-  height: var(--popup-height);
-  width: var(--popup-width);
-}
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  color: var(--text);
-}
-
-body,
+body:has(#app),
 #app {
   height: 100%;
   margin: 0;
