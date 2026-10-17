@@ -1,17 +1,24 @@
 <script lang="ts">
   import type { LucideIcon } from "@lucide/svelte";
 
+  type IconButtonSizes = "sm" | "md";
+
   interface IconButtonProps {
     ariaLabel?: string;
     icon: LucideIcon;
-    size?: "sm" | "md";
+    size?: IconButtonSizes;
   }
+
+  const iconSizeMap = {
+    md: 18,
+    sm: 14,
+  } satisfies Record<IconButtonSizes, number>;
 
   const { ariaLabel, icon: Icon, size = "md" }: IconButtonProps = $props();
 </script>
 
 <button class={`icon-btn icon-btn-${size}`} aria-label={ariaLabel}>
-  <Icon />
+  <Icon size={iconSizeMap[size]} />
 </button>
 
 <style>
