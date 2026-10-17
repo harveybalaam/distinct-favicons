@@ -19,7 +19,7 @@
   }: ButtonProps = $props();
 </script>
 
-<button aria-label={ariaLabel} class:has-icon={!!Icon} {type}>
+<button aria-label={ariaLabel} class:has-icon={!!Icon} onclick={onClick} {type}>
   {#if Icon}
     <Icon size={16} />
   {/if}
