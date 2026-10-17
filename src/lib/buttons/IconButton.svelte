@@ -6,6 +6,7 @@
   interface IconButtonProps {
     ariaLabel?: string;
     icon: LucideIcon;
+    onClick: () => void;
     size?: IconButtonSizes;
   }
 
@@ -14,10 +15,19 @@
     sm: 14,
   } satisfies Record<IconButtonSizes, number>;
 
-  const { ariaLabel, icon: Icon, size = "md" }: IconButtonProps = $props();
+  const {
+    ariaLabel,
+    icon: Icon,
+    onClick,
+    size = "md",
+  }: IconButtonProps = $props();
 </script>
 
-<button class={`icon-btn icon-btn-${size}`} aria-label={ariaLabel}>
+<button
+  aria-label={ariaLabel}
+  class={`icon-btn icon-btn-${size}`}
+  onclick={onClick}
+>
   <Icon size={iconSizeMap[size]} />
 </button>
 

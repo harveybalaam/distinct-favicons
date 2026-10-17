@@ -21,6 +21,10 @@
         },
         options: ["List", "Settings", "SquarePen", "Trash"],
       },
+      onClick: {
+        control: false,
+        description: "What to run when the button is clicked",
+      },
       size: {
         control: { type: "select" },
         description: "The size of the button, in t-shirt sizes",

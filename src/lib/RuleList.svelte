@@ -10,8 +10,18 @@
     <div>
       <h2>Rules</h2>
       <div class="title-bar-actions">
-        <Button icon={PlusIcon} text="New" />
-        <IconButton ariaLabel="Filter Rules" icon={FunnelIcon} size="sm" />
+        <Button
+          ariaLabel="New Rule"
+          icon={PlusIcon}
+          onClick={() => {}}
+          text="New"
+        />
+        <IconButton
+          ariaLabel="Filter Rules"
+          icon={FunnelIcon}
+          onClick={() => {}}
+          size="sm"
+        />
       </div>
     </div>
     <Search />

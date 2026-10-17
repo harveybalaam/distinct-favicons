@@ -5,7 +5,11 @@
 
 <nav class="navbar">
   <h1><strong>Distinct</strong>Favicons</h1>
-  <IconButton ariaLabel="Settings" icon={SettingsIcon} />
+  <IconButton
+    ariaLabel="Settings"
+    onClick={() => {}}
+    icon={route.name === "settings" ? XIcon : SettingsIcon}
+  />
 </nav>
 
 <style>
