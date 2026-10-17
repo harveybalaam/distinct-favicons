@@ -14,7 +14,9 @@
     "fmt:check": "oxfmt --check",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
-    "test": "vitest"
+    "test": "vitest",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@lucide/svelte": "^1.52.0"
@@ -29,7 +31,17 @@
     "svelte-check": "^4.7.6",
     "typescript": "~6.0.2",
     "vite": "^8.3.0",
-    "vitest": "^5.0.4"
+    "vitest": "^5.0.4",
+    "storybook": "^10.6.2",
+    "@storybook/svelte-vite": "^10.6.2",
+    "@storybook/addon-svelte-csf": "latest",
+    "@chromatic-com/storybook": "latest",
+    "@storybook/addon-vitest": "^10.6.2",
+    "@storybook/addon-a11y": "^10.6.2",
+    "@storybook/addon-docs": "^10.6.2",
+    "@vitest/browser-playwright": "5.0.4",
+    "@vitest/coverage-v8": "5.0.4",
+    "playwright": "latest"
   },
   "packageManager": "npm@11.19.1"
 }
