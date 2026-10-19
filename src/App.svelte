@@ -1,20 +1,26 @@
 <script lang="ts">
   import Header from "./lib/Header.svelte";
   import RuleList from "./lib/RuleList.svelte";
+  import Settings from "./lib/Settings.svelte";
   import { nav } from "./utils/nav.svelte";
 
   const route = $derived(nav.current);
 </script>
 
-<div class="main-content">
+<div>
   <Header />
-  {#if route.name === "list"}
-    <RuleList />
-  {/if}
+  <main>
+    {#if route.name === "settings"}
+      <Settings />
+    {:else}
+      <RuleList />
+    {/if}
+  </main>
 </div>
 
 <style>
-  .main-content {
+  div,
+  main {
     display: flex;
     flex-direction: column;
     height: 100%;

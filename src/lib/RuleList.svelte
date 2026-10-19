@@ -3,17 +3,25 @@
   import Button from "./buttons/Button.svelte";
   import IconButton from "./buttons/IconButton.svelte";
   import Search from "./Search.svelte";
+  import TitleBar from "./TitleBar.svelte";
 </script>
 
 <div class="rules-list">
-  <div class="title-bar">
-    <div>
-      <h2>Rules</h2>
-      <div class="title-bar-actions">
-        <Button icon={PlusIcon} text="New" />
-        <IconButton ariaLabel="Filter Rules" icon={FunnelIcon} size="sm" />
-      </div>
-    </div>
+  <div class="title-container">
+    <TitleBar title="Rules">
+      <Button
+        ariaLabel="New Rule"
+        icon={PlusIcon}
+        onClick={() => {}}
+        text="New"
+      />
+      <IconButton
+        ariaLabel="Filter Rules"
+        icon={FunnelIcon}
+        onClick={() => {}}
+        size="sm"
+      />
+    </TitleBar>
     <Search />
   </div>
   <ul>
@@ -30,34 +38,12 @@
     min-height: 0;
   }
 
-  .title-bar {
+  .title-container {
     display: flex;
     flex-direction: column;
-
     gap: 0.75rem;
 
     margin-bottom: 0.75rem;
-  }
-
-  div:has(> .title-bar-actions) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .title-bar-actions {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  h2 {
-    color: var(--subtext-1);
-
-    margin: 0;
-
-    font-size: 1.375rem;
-    font-weight: 500;
   }
 
   ul {

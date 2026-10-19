@@ -21,10 +21,18 @@
         },
         options: ["List", "Settings", "SquarePen", "Trash"],
       },
+      onClick: {
+        control: false,
+        description: "What to run when the button is clicked",
+      },
       size: {
         control: { type: "select" },
         description: "The size of the button, in t-shirt sizes",
         options: ["sm", "md"],
+      },
+      variant: {
+        control: { type: "select" },
+        options: ["primary", "destructive"],
       },
     },
     component: IconButton,
@@ -32,6 +40,16 @@
     title: "Buttons/IconButton",
   });
 </script>
+
+<Story
+  name="Primary"
+  args={{ ariaLabel: "IconButton", icon: SettingsIcon, variant: "primary" }}
+/>
+
+<Story
+  name="Destructive"
+  args={{ ariaLabel: "IconButton", icon: TrashIcon, variant: "destructive" }}
+/>
 
 <Story name="Medium" args={{ ariaLabel: "IconButton", icon: SettingsIcon }} />
 

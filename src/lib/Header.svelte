@@ -1,15 +1,37 @@
-<script>
+<script lang="ts">
+  import { SettingsIcon, XIcon } from "@lucide/svelte";
   import IconButton from "./buttons/IconButton.svelte";
-  import { SettingsIcon } from "@lucide/svelte";
+  import { nav as navRouter } from "../utils/nav.svelte";
+
+  const route = $derived(navRouter.current);
+  const isSettingsRoute = $derived(route.name === "settings");
+
+  const handleHeaderButtonClick = () => {
+    if (route.name !== "settings") {
+      navRouter.push({ name: "settings" });
+      return;
+    }
+
+    if (navRouter.canGoBack) {
+      navRouter.back();
+    } else {
+      navRouter.push({ name: "list" });
+    }
+  };
 </script>
 
-<nav class="navbar">
+<header>
   <h1><strong>Distinct</strong>Favicons</h1>
-  <IconButton ariaLabel="Settings" icon={SettingsIcon} />
-</nav>
+  <IconButton
+    ariaLabel="Settings"
+    onClick={handleHeaderButtonClick}
+    icon={isSettingsRoute ? XIcon : SettingsIcon}
+    variant={isSettingsRoute ? "destructive" : "primary"}
+  />
+</header>
 
 <style>
-  nav.navbar {
+  header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,7 +45,7 @@
     border-bottom: 1px solid var(--border);
   }
 
-  nav > h1 {
+  header > h1 {
     font-size: x-large;
     line-height: 0;
     font-weight: normal;

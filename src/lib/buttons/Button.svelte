@@ -5,6 +5,7 @@
   interface ButtonProps {
     ariaLabel?: string;
     icon?: LucideIcon;
+    onClick: () => void;
     text: string;
     type?: HTMLButtonAttributes["type"];
   }
@@ -12,12 +13,13 @@
   const {
     ariaLabel,
     icon: Icon,
+    onClick,
     text,
     type = "button",
   }: ButtonProps = $props();
 </script>
 
-<button {type} class:has-icon={!!Icon} aria-label={ariaLabel}>
+<button aria-label={ariaLabel} class:has-icon={!!Icon} onclick={onClick} {type}>
   {#if Icon}
     <Icon size={16} />
   {/if}

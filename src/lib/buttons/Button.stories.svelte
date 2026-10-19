@@ -15,6 +15,10 @@
         },
         options: ["None", "Plus", "Rocket"],
       },
+      onClick: {
+        control: false,
+        description: "What to run when the button is clicked",
+      },
     },
     component: Button,
     tags: ["autodocs"],
