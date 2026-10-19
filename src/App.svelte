@@ -7,17 +7,20 @@
   const route = $derived(nav.current);
 </script>
 
-<div class="main-content">
+<div>
   <Header />
-  {#if route.name === "settings"}
-    <Settings />
-  {:else}
-    <RuleList />
-  {/if}
+  <main>
+    {#if route.name === "settings"}
+      <Settings />
+    {:else}
+      <RuleList />
+    {/if}
+  </main>
 </div>
 
 <style>
-  .main-content {
+  div,
+  main {
     display: flex;
     flex-direction: column;
     height: 100%;

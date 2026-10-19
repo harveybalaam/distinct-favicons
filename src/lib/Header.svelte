@@ -20,7 +20,7 @@
   };
 </script>
 
-<nav class="navbar">
+<header>
   <h1><strong>Distinct</strong>Favicons</h1>
   <IconButton
     ariaLabel="Settings"
@@ -28,10 +28,10 @@
     icon={isSettingsRoute ? XIcon : SettingsIcon}
     variant={isSettingsRoute ? "destructive" : "primary"}
   />
-</nav>
+</header>
 
 <style>
-  nav.navbar {
+  header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -45,7 +45,7 @@
     border-bottom: 1px solid var(--border);
   }
 
-  nav > h1 {
+  header > h1 {
     font-size: x-large;
     line-height: 0;
     font-weight: normal;
