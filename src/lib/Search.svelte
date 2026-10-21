@@ -16,7 +16,7 @@
     gap: 0.5rem;
 
     background-color: var(--bg);
-    color: var(--surface-2);
+    color: var(--placeholder);
 
     padding: 0 0.5rem 0 0.5rem;
 

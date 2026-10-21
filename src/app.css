@@ -32,6 +32,7 @@
   --bg: var(--mantle);
   --border: var(--surface-1);
   --code-bg: var(--crust);
+  --placeholder: var(--subtext-1);
 
   color-scheme: light dark;
   color: var(--text);
@@ -78,6 +79,7 @@
     --bg: var(--crust);
     --border: var(--surface-0);
     --code-bg: var(--mantle);
+    --placeholder: var(--subtext-0);
   }
 }
 
@@ -106,7 +108,7 @@
   }
 
   input::placeholder {
-    color: var(--surface-2);
+    color: var(--placeholder);
   }
 
   button:active {
