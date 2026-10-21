@@ -75,7 +75,7 @@
   }
 
   input:focus-visible + .slider {
-    outline: 1px solid var(--sky);
+    outline: 2px solid var(--sky);
     outline-offset: 1px;
 
     transition-property: background-color, border, border-radius;

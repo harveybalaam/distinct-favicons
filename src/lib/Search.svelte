@@ -25,7 +25,7 @@
   }
 
   .rule-search-container:focus-within {
-    outline: solid 1px var(--sky);
+    outline: solid 2px var(--sky);
     outline-offset: -1px;
   }
 
