@@ -39,6 +39,8 @@
 
   --popup-width: 384px;
   --popup-height: 512px;
+
+  --font-family: system-ui, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -87,7 +89,7 @@
   margin: 0;
   color: var(--text);
 
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-family);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
