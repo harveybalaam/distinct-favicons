@@ -42,8 +42,8 @@
 <div class="text-input">
   <label for={inputId}>
     {label}
-    {#if !required}
-      <span>Optional</span>
+    {#if required}
+      <span>*</span>
     {/if}
   </label>
   <input
@@ -91,18 +91,10 @@
 
   label {
     display: flex;
-    align-items: center;
-    gap: 0.375rem;
+    gap: 0.125rem;
   }
 
   label > span {
-    padding: 0.125rem 0.25rem 0.125rem 0.25rem;
-
-    font-size: 0.8rem;
-
-    background-color: var(--base);
-
-    border-radius: 0.375rem;
-    border: 1px solid var(--border);
+    color: var(--red);
   }
 </style>
