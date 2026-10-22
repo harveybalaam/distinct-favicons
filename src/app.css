@@ -79,7 +79,7 @@
     --bg: var(--crust);
     --border: var(--surface-0);
     --code-bg: var(--mantle);
-    --placeholder: var(--subtext-0);
+    --placeholder: var(--overlay-1);
   }
 }
 

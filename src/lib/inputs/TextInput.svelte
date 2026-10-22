@@ -19,6 +19,7 @@
     hint?: string;
     id?: string;
     label: string;
+    monospace?: boolean;
     name: string;
     placeholder: string;
     required?: boolean;
@@ -29,6 +30,7 @@
     hint,
     id,
     label,
+    monospace = false,
     name,
     placeholder,
     required = false,
@@ -39,7 +41,7 @@
   const hintId = $derived(`${inputId}-hint`);
 </script>
 
-<div class="text-input">
+<div class="text-input" class:text-input-mono={monospace}>
   <label for={inputId}>
     {label}
     {#if required}
@@ -60,6 +62,7 @@
 
 <style>
   .text-input {
+    color: var(--subtext-1);
     display: flex;
     flex-direction: column;
 
@@ -68,30 +71,36 @@
 
   .text-input > label {
     margin-bottom: 0.5rem;
-    color: var(--subtext-0);
   }
 
   .text-input > input {
     padding: 0.5rem;
 
-    background-color: var(--crust);
+    line-height: 1rem;
+
+    background-color: var(--mantle);
 
     border: 1px solid var(--border);
     border-radius: 0.75rem;
   }
 
+  .text-input.text-input-mono > input {
+    font-family: monospace;
+    font-size: 100% !important;
+  }
+
   .text-input > p {
     margin: 0.25rem 0 0 0;
-    padding-left: 0.5rem;
+    padding-left: 0.625rem;
 
     font-size: 0.875rem;
-
-    color: var(--subtext-0);
   }
 
   label {
     display: flex;
     gap: 0.125rem;
+    font-size: 0.875rem;
+    font-weight: 700;
   }
 
   label > span {

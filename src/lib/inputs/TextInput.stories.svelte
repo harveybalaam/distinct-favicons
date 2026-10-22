@@ -48,3 +48,13 @@
     required: true,
   }}
 />
+
+<Story
+  name="Monospace"
+  args={{
+    label: "Monospace Input",
+    name: "Monospace Input",
+    placeholder: "Example placeholder",
+    monospace: true,
+  }}
+/>
