@@ -51,6 +51,11 @@
   args={{ ariaLabel: "IconButton", icon: TrashIcon, variant: "destructive" }}
 />
 
+<Story
+  name="Ghost"
+  args={{ ariaLabel: "IconButton", icon: ListIcon, variant: "ghost" }}
+/>
+
 <Story name="Medium" args={{ ariaLabel: "IconButton", icon: SettingsIcon }} />
 
 <Story

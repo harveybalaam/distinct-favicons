@@ -3,7 +3,7 @@
 
   type IconButtonSizes = "sm" | "md";
 
-  type IconButtonVariants = "primary" | "destructive";
+  type IconButtonVariants = "destructive" | "ghost" | "primary";
 
   interface IconButtonProps {
     ariaLabel?: string;
@@ -67,23 +67,36 @@
     width: 1.75rem;
   }
 
-  button.icon-btn.icon-btn-md:hover {
+  button.icon-btn.icon-btn-ghost {
+    background: none;
+    border: 1px solid transparent;
+  }
+
+  button.icon-btn.icon-btn-md:hover,
+  button.icon-btn.icon-btn-md.icon-btn-ghost {
     border-radius: 0.75rem;
   }
 
-  button.icon-btn.icon-btn-sm:hover {
+  button.icon-btn.icon-btn-sm:hover,
+  button.icon-btn.icon-btn-sm.icon-btn-ghost {
     border-radius: 0.65rem;
-  }
-
-  button.icon-btn.icon-btn-primary:hover {
-    background-color: oklch(from var(--sky) l c h / 20%);
-    border-color: var(--sky);
-    color: var(--sky);
   }
 
   button.icon-btn.icon-btn-destructive:hover {
     background-color: oklch(from var(--red) l c h / 20%);
     border-color: var(--red);
     color: var(--red);
+  }
+
+  button.icon-btn.icon-btn-ghost:hover {
+    background-color: var(--mantle);
+    border-color: var(--border);
+    color: var(--text);
+  }
+
+  button.icon-btn.icon-btn-primary:hover {
+    background-color: oklch(from var(--sky) l c h / 20%);
+    border-color: var(--sky);
+    color: var(--sky);
   }
 </style>
