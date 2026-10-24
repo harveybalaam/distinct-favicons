@@ -2,12 +2,15 @@
   import type { HTMLButtonAttributes } from "svelte/elements";
   import type { LucideIcon } from "@lucide/svelte";
 
+  type ButtonVariant = "ghost" | "primary";
+
   interface ButtonProps {
     ariaLabel?: string;
     icon?: LucideIcon;
     onClick: () => void;
     text: string;
     type?: HTMLButtonAttributes["type"];
+    variant?: ButtonVariant;
   }
 
   const {
@@ -16,10 +19,17 @@
     onClick,
     text,
     type = "button",
+    variant = "primary",
   }: ButtonProps = $props();
 </script>
 
-<button aria-label={ariaLabel} class:has-icon={!!Icon} onclick={onClick} {type}>
+<button
+  aria-label={ariaLabel}
+  class={`btn-${variant}`}
+  class:has-icon={!!Icon}
+  onclick={onClick}
+  {type}
+>
   {#if Icon}
     <Icon size={16} />
   {/if}
@@ -66,6 +76,18 @@
 
     border-radius: 0.65rem;
     border-color: var(--sky);
+  }
+
+  button.btn-ghost {
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 0.65rem;
+  }
+
+  button.btn-ghost:hover {
+    background-color: var(--mantle);
+    border-color: var(--border);
+    color: var(--text);
   }
 
   button.has-icon > span {
