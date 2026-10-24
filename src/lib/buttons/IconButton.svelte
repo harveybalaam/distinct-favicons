@@ -1,22 +1,22 @@
 <script lang="ts">
   import type { LucideIcon } from "@lucide/svelte";
 
-  type IconButtonSizes = "sm" | "md";
+  type IconButtonSize = "sm" | "md";
 
-  type IconButtonVariants = "destructive" | "ghost" | "primary";
+  type IconButtonVariant = "destructive" | "ghost" | "primary";
 
   interface IconButtonProps {
     ariaLabel?: string;
     icon: LucideIcon;
     onClick: () => void;
-    size?: IconButtonSizes;
-    variant?: IconButtonVariants;
+    size?: IconButtonSize;
+    variant?: IconButtonVariant;
   }
 
   const iconSizeMap = {
     md: 18,
     sm: 14,
-  } satisfies Record<IconButtonSizes, number>;
+  } satisfies Record<IconButtonSize, number>;
 
   const {
     ariaLabel,
