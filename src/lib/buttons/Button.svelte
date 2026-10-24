@@ -60,6 +60,8 @@
     background-color: oklch(from var(--sky) l c h / 10%);
     color: var(--sky);
 
+    font-weight: 600;
+
     border-radius: 0.65rem;
     border-color: var(--sky);
   }
