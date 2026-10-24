@@ -66,10 +66,6 @@
     font-family: var(--font-family);
   }
 
-  .text-input > label {
-    margin-bottom: 0.5rem;
-  }
-
   .text-input > input {
     padding: 0.5rem;
 
@@ -91,12 +87,18 @@
     margin: 0.25rem 0 0 0;
     padding-left: 0.625rem;
 
+    color: var(--overlay-1);
+
     font-size: 0.875rem;
+    font-style: italic;
   }
 
   label {
     display: flex;
     gap: 0.125rem;
+
+    margin-bottom: 0.5rem;
+
     font-size: 0.875rem;
     font-weight: 700;
   }
