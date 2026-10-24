@@ -77,6 +77,7 @@
     padding: 0.5rem;
 
     line-height: 1rem;
+    font-family: var(--font-family);
 
     background-color: var(--mantle);
 
@@ -86,7 +87,7 @@
 
   .text-input.text-input-mono > input {
     font-family: monospace;
-    font-size: 100% !important;
+    font-size: 0.875rem;
   }
 
   .text-input > p {
