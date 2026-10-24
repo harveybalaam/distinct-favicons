@@ -1,5 +1,6 @@
 <script lang="ts">
   import { CheckIcon, ChevronDownIcon } from "@lucide/svelte";
+  import type { InputProps } from "../../types/input-props";
   import { getInputId } from "../../utils/get-input-id";
 
   export interface SelectOption {
@@ -7,12 +8,8 @@
     value: string;
   }
 
-  interface SelectProps {
-    id?: string;
-    label: string;
-    name: string;
+  interface SelectProps extends InputProps {
     options: SelectOption[];
-    required?: boolean;
   }
 
   const { id, label, name, options, required = false }: SelectProps = $props();

@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { HTMLInputTypeAttribute } from "svelte/elements";
+  import type { InputProps } from "../../types/input-props";
   import { getInputId } from "../../utils/get-input-id";
 
   type TextInputTypeAttribute = Extract<
@@ -15,14 +16,10 @@
     | "week"
   >;
 
-  interface TextInputProps {
+  interface TextInputProps extends InputProps {
     hint?: string;
-    id?: string;
-    label: string;
     monospace?: boolean;
-    name: string;
     placeholder: string;
-    required?: boolean;
     type?: TextInputTypeAttribute;
   }
 
