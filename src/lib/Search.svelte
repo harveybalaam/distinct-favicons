@@ -15,7 +15,7 @@
     align-items: center;
     gap: 0.5rem;
 
-    background-color: var(--bg);
+    background-color: var(--mantle);
     color: var(--placeholder);
 
     padding: 0 0.5rem 0 0.5rem;
