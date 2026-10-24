@@ -36,6 +36,7 @@
     gap: 0.25rem;
 
     height: 1.75rem;
+    width: fit-content;
 
     padding: 0 0.5rem 0 0.5rem;
 
