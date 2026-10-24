@@ -40,6 +40,8 @@
 
     padding: 0 0.5rem 0 0.5rem;
 
+    font-family: var(--font-family);
+
     background-color: var(--mantle);
     color: var(--text);
 
