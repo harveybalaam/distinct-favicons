@@ -39,7 +39,7 @@
 
     padding: 0 0.5rem 0 0.5rem;
 
-    background-color: oklch(from var(--text) l c h / 10%);
+    background-color: var(--mantle);
     color: var(--text);
 
     border: 1px solid var(--border);
@@ -56,7 +56,7 @@
   }
 
   button:hover {
-    background-color: oklch(from var(--sky) l c h / 20%);
+    background-color: oklch(from var(--sky) l c h / 10%);
     color: var(--sky);
 
     border-radius: 0.65rem;

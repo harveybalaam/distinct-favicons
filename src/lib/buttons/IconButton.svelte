@@ -41,7 +41,7 @@
     align-items: center;
     justify-content: center;
 
-    background-color: oklch(from var(--text) l c h / 10%);
+    background-color: var(--mantle);
     color: var(--text);
 
     transition-property: all;
@@ -83,7 +83,7 @@
   }
 
   button.icon-btn.icon-btn-destructive:hover {
-    background-color: oklch(from var(--red) l c h / 20%);
+    background-color: oklch(from var(--red) l c h / 10%);
     border-color: var(--red);
     color: var(--red);
   }
@@ -95,7 +95,7 @@
   }
 
   button.icon-btn.icon-btn-primary:hover {
-    background-color: oklch(from var(--sky) l c h / 20%);
+    background-color: oklch(from var(--sky) l c h / 10%);
     border-color: var(--sky);
     color: var(--sky);
   }
