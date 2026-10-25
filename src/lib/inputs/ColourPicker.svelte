@@ -21,6 +21,7 @@
   <div>
     <input
       defaultValue={defaultColour}
+      {name}
       onchange={({ currentTarget }) => {
         currentColour = currentTarget.value;
       }}

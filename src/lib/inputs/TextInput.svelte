@@ -48,6 +48,7 @@
   <input
     aria-describedby={hint && hintId}
     id={inputId}
+    {name}
     {placeholder}
     {required}
     {type}
