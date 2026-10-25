@@ -7,7 +7,7 @@
   interface ButtonProps {
     ariaLabel?: string;
     icon?: LucideIcon;
-    onClick: () => void;
+    onClick?: () => void;
     text: string;
     type?: HTMLButtonAttributes["type"];
     variant?: ButtonVariant;
