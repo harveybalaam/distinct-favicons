@@ -2,7 +2,7 @@
   import type { HTMLButtonAttributes } from "svelte/elements";
   import type { LucideIcon } from "@lucide/svelte";
 
-  type ButtonVariant = "ghost" | "primary";
+  type ButtonVariant = "action" | "ghost" | "primary";
 
   interface ButtonProps {
     ariaLabel?: string;
@@ -88,6 +88,24 @@
     background-color: var(--mantle);
     border-color: var(--border);
     color: var(--text);
+  }
+
+  button.btn-action {
+    color: var(--crust);
+    background-color: var(--sky);
+    border: 1px solid var(--sky);
+  }
+
+  button.btn-action:hover {
+    @media (prefers-color-scheme: light) {
+      background-color: hsl(from var(--sky) h s 40%);
+      border-color: hsl(from var(--sky) h s 40%);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: hsl(from var(--sky) h s 80%);
+      border-color: hsl(from var(--sky) h s 80%);
+    }
   }
 
   button.has-icon > span {
