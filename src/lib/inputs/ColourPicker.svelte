@@ -73,6 +73,7 @@
 
     padding: 0;
     border: none;
+    outline: 1px solid var(--border);
 
     cursor: pointer;
   }
