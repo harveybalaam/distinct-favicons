@@ -80,6 +80,10 @@
     border-radius: 0.75rem;
   }
 
+  .text-input > input:user-invalid {
+    outline: 2px solid var(--red);
+  }
+
   .text-input.text-input-mono > input {
     font-family: monospace;
     font-size: 0.875rem;
