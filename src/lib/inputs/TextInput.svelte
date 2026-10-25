@@ -36,6 +36,9 @@
 
   const inputId = $derived(id ?? toKebabCase(name));
   const hintId = $derived(`${inputId}-hint`);
+
+  // At least one non-whitespace character
+  const requiredPattern = String.raw`.*\S+.*`;
 </script>
 
 <div class="text-input" class:text-input-mono={monospace}>
@@ -49,8 +52,10 @@
     aria-describedby={hint && hintId}
     id={inputId}
     {name}
+    pattern={required ? requiredPattern : null}
     {placeholder}
     {required}
+    title={required ? "At least one non-whitespace character" : null}
     {type}
   />
   {#if hint}
