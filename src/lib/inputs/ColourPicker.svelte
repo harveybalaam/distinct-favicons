@@ -1,10 +1,10 @@
 <script lang="ts">
   import type { InputProps } from "../../types/input-props";
-  import { getInputId } from "../../utils/get-input-id";
+  import { toKebabCase } from "../../utils/to-kebab-case";
 
   const { id, label, name, required }: InputProps = $props();
 
-  const inputId = $derived(getInputId(id, name));
+  const inputId = $derived(id ?? toKebabCase(name));
 
   // Blue (from dark scheme)
   const defaultColour = "#8aadf4";

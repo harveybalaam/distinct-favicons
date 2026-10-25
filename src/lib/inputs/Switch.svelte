@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getInputId } from "../../utils/get-input-id";
+  import { toKebabCase } from "../../utils/to-kebab-case";
 
   interface SwitchProps {
     ariaLabel?: string;
@@ -17,7 +17,7 @@
     name,
   }: SwitchProps = $props();
 
-  const inputId = $derived(getInputId(id, name));
+  const inputId = $derived(id ?? toKebabCase(name));
 
   // svelte-ignore state_referenced_locally
   let isChecked = $state(defaultChecked);

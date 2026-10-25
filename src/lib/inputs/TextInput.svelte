@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { HTMLInputTypeAttribute } from "svelte/elements";
   import type { InputProps } from "../../types/input-props";
-  import { getInputId } from "../../utils/get-input-id";
+  import { toKebabCase } from "../../utils/to-kebab-case";
 
   type TextInputTypeAttribute = Extract<
     HTMLInputTypeAttribute,
@@ -34,7 +34,7 @@
     type = "text",
   }: TextInputProps = $props();
 
-  const inputId = $derived(getInputId(id, name));
+  const inputId = $derived(id ?? toKebabCase(name));
   const hintId = $derived(`${inputId}-hint`);
 </script>
 
