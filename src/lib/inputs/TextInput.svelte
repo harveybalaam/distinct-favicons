@@ -59,9 +59,10 @@
 
 <style>
   .text-input {
-    color: var(--subtext-1);
     display: flex;
     flex-direction: column;
+
+    color: var(--subtext-1);
 
     font-family: var(--font-family);
   }
