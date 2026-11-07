@@ -46,10 +46,10 @@
       <div class="alteration-type">
         <Select
           label="Alteration Type"
-          name="alteration-type"
+          name="alterationType"
           options={alterationTypes}
         />
-        <ColourPicker label="Colour" name="colour" />
+        <ColourPicker label="Colour" name="alterationColour" />
       </div>
     </div>
     <div class="form-footer">
