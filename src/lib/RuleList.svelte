@@ -4,6 +4,11 @@
   import IconButton from "./buttons/IconButton.svelte";
   import Search from "./Search.svelte";
   import TitleBar from "./TitleBar.svelte";
+  import { nav } from "../utils/nav.svelte";
+
+  const handleNewRuleClick = () => {
+    nav.push({ name: "create" });
+  };
 </script>
 
 <div class="rules-list">
@@ -12,7 +17,7 @@
       <Button
         ariaLabel="New Rule"
         icon={PlusIcon}
-        onClick={() => {}}
+        onClick={handleNewRuleClick}
         text="New"
       />
       <IconButton
