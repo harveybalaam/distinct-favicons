@@ -83,32 +83,14 @@
   }
 }
 
-:root:has(#app) {
-  height: var(--popup-height);
-  width: var(--popup-width);
-
-  padding: 0;
-  margin: 0;
-  color: var(--text);
-
-  font-family: var(--font-family);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  *:focus-visible {
-    outline: solid 2px var(--sky);
-    outline-offset: -1px;
-  }
-
+:root {
   input,
   label,
   meter,
   progress,
   select {
     color: var(--text);
-    font-family: inherit;
+    font-family: var(--font-family);
   }
 
   label {
@@ -140,6 +122,26 @@
     background-color: var(--mantle);
     border: 1px solid var(--border);
     border-radius: 0.75rem;
+  }
+}
+
+:root:has(#app) {
+  height: var(--popup-height);
+  width: var(--popup-width);
+
+  padding: 0;
+  margin: 0;
+  color: var(--text);
+
+  font-family: var(--font-family);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  *:focus-visible {
+    outline: solid 2px var(--sky);
+    outline-offset: -1px;
   }
 }
 

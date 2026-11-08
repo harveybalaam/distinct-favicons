@@ -91,6 +91,7 @@
 
     color: var(--overlay-1);
 
+    font-family: var(--font-family);
     font-size: 0.875rem;
     font-style: italic;
   }
