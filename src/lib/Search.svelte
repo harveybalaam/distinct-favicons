@@ -3,7 +3,7 @@
 </script>
 
 <search>
-  <div class="rule-search-container">
+  <div class="base-input rule-search-container">
     <SearchIcon size={16} />
     <input id="rule-search" type="text" placeholder="Search rules..." />
   </div>
@@ -15,17 +15,13 @@
     align-items: center;
     gap: 0.5rem;
 
-    background-color: var(--bg);
-    color: var(--surface-2);
+    color: var(--placeholder);
 
     padding: 0 0.5rem 0 0.5rem;
-
-    border: 1px solid var(--border);
-    border-radius: 0.75rem;
   }
 
   .rule-search-container:focus-within {
-    outline: solid 1px var(--sky);
+    outline: solid 2px var(--sky);
     outline-offset: -1px;
   }
 

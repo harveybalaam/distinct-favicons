@@ -1,18 +1,94 @@
 <script lang="ts">
+  import { toKebabCase } from "../../utils/to-kebab-case";
+
   interface SwitchProps {
     ariaLabel?: string;
+    defaultChecked?: boolean;
+    id?: string;
+    label?: string;
     name: string;
   }
 
-  const { ariaLabel, name }: SwitchProps = $props();
+  const {
+    ariaLabel,
+    defaultChecked = false,
+    id,
+    label,
+    name,
+  }: SwitchProps = $props();
+
+  const inputId = $derived(id ?? toKebabCase(name));
+
+  // svelte-ignore state_referenced_locally
+  let isChecked = $state(defaultChecked);
+
+  const handleOnChange = ({
+    currentTarget,
+  }: Event & { currentTarget: EventTarget & HTMLInputElement }) => {
+    isChecked = currentTarget.checked;
+  };
 </script>
 
-<label class="switch">
-  <input aria-label={ariaLabel} {name} role="switch" type="checkbox" />
-  <span class="slider"></span>
-</label>
+{#if label}
+  <div class="switch-label-container">
+    <label for={inputId}>
+      {label}
+      <div class="base-input">
+        <span class="switch-status">{isChecked ? "On" : "Off"}</span>
+        <div class="switch">
+          <input
+            aria-label={ariaLabel}
+            {defaultChecked}
+            id={inputId}
+            {name}
+            onchange={handleOnChange}
+            role="switch"
+            type="checkbox"
+          />
+          <span class="slider"></span>
+        </div>
+      </div>
+    </label>
+  </div>
+{:else}
+  <label class="switch">
+    <input aria-label={ariaLabel} {name} role="switch" type="checkbox" />
+    <span class="slider"></span>
+  </label>
+{/if}
 
 <style>
+  .switch-label-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div:has(> .switch) {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+
+    padding: 0.375rem;
+
+    color: var(--subtext-1);
+
+    font-size: 0.875rem;
+  }
+
+  .switch-label-container > label {
+    flex-direction: column;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+
+  .switch-label-container > label span {
+    font-weight: normal;
+  }
+
+  .switch-status {
+    width: 2.375ch;
+  }
+
   .switch {
     position: relative;
     display: inline-block;
@@ -75,7 +151,7 @@
   }
 
   input:focus-visible + .slider {
-    outline: 1px solid var(--sky);
+    outline: 2px solid var(--sky);
     outline-offset: 1px;
 
     transition-property: background-color, border, border-radius;

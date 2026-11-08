@@ -1,4 +1,5 @@
 <script lang="ts">
+  import CreateRule from "./lib/CreateRule.svelte";
   import Header from "./lib/Header.svelte";
   import RuleList from "./lib/RuleList.svelte";
   import Settings from "./lib/Settings.svelte";
@@ -10,7 +11,9 @@
 <div>
   <Header />
   <main>
-    {#if route.name === "settings"}
+    {#if route.name === "create"}
+      <CreateRule />
+    {:else if route.name === "settings"}
       <Settings />
     {:else}
       <RuleList />

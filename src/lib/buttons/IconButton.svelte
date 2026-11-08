@@ -1,22 +1,22 @@
 <script lang="ts">
   import type { LucideIcon } from "@lucide/svelte";
 
-  type IconButtonSizes = "sm" | "md";
+  type IconButtonSize = "sm" | "md";
 
-  type IconButtonVariants = "primary" | "destructive";
+  type IconButtonVariant = "destructive" | "ghost" | "primary";
 
   interface IconButtonProps {
     ariaLabel?: string;
     icon: LucideIcon;
     onClick: () => void;
-    size?: IconButtonSizes;
-    variant?: IconButtonVariants;
+    size?: IconButtonSize;
+    variant?: IconButtonVariant;
   }
 
   const iconSizeMap = {
     md: 18,
     sm: 14,
-  } satisfies Record<IconButtonSizes, number>;
+  } satisfies Record<IconButtonSize, number>;
 
   const {
     ariaLabel,
@@ -41,7 +41,7 @@
     align-items: center;
     justify-content: center;
 
-    background-color: oklch(from var(--text) l c h / 10%);
+    background-color: var(--mantle);
     color: var(--text);
 
     transition-property: all;
@@ -67,23 +67,36 @@
     width: 1.75rem;
   }
 
-  button.icon-btn.icon-btn-md:hover {
+  button.icon-btn.icon-btn-ghost {
+    background: none;
+    border: 1px solid transparent;
+  }
+
+  button.icon-btn.icon-btn-md:hover,
+  button.icon-btn.icon-btn-md.icon-btn-ghost {
     border-radius: 0.75rem;
   }
 
-  button.icon-btn.icon-btn-sm:hover {
+  button.icon-btn.icon-btn-sm:hover,
+  button.icon-btn.icon-btn-sm.icon-btn-ghost {
     border-radius: 0.65rem;
   }
 
-  button.icon-btn.icon-btn-primary:hover {
-    background-color: oklch(from var(--sky) l c h / 20%);
-    border-color: var(--sky);
-    color: var(--sky);
-  }
-
   button.icon-btn.icon-btn-destructive:hover {
-    background-color: oklch(from var(--red) l c h / 20%);
+    background-color: oklch(from var(--red) l c h / 10%);
     border-color: var(--red);
     color: var(--red);
+  }
+
+  button.icon-btn.icon-btn-ghost:hover {
+    background-color: var(--mantle);
+    border-color: var(--border);
+    color: var(--text);
+  }
+
+  button.icon-btn.icon-btn-primary:hover {
+    background-color: oklch(from var(--sky) l c h / 10%);
+    border-color: var(--sky);
+    color: var(--sky);
   }
 </style>

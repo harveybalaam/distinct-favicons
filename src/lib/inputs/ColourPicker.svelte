@@ -1,0 +1,87 @@
+<script lang="ts">
+  import type { InputProps } from "../../types/input-props";
+  import { toKebabCase } from "../../utils/to-kebab-case";
+
+  const { id, label, name, required }: InputProps = $props();
+
+  const inputId = $derived(id ?? toKebabCase(name));
+
+  // Blue (from dark scheme)
+  const defaultColour = "#8aadf4";
+  let currentColour = $state(defaultColour);
+</script>
+
+<div class="colour-picker">
+  <label for={inputId}>
+    {label}
+    {#if required}
+      <span class="required">*</span>
+    {/if}
+  </label>
+  <div class="base-input">
+    <input
+      defaultValue={defaultColour}
+      {name}
+      onchange={({ currentTarget }) => {
+        currentColour = currentTarget.value;
+      }}
+      type="color"
+      {required}
+    />
+    <span>{currentColour}</span>
+  </div>
+</div>
+
+<style>
+  .colour-picker {
+    display: flex;
+    flex-direction: column;
+
+    color: var(--subtext-1);
+
+    font-size: 0.875rem;
+    font-family: var(--font-family);
+  }
+
+  .colour-picker > div {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+
+    padding: 0 0.375rem 0 0.375rem;
+
+    line-height: 1rem;
+  }
+
+  .colour-picker > div > span {
+    padding: 0.5rem 0 0.5rem 0;
+
+    font-family: monospace;
+
+    cursor: default;
+  }
+
+  input {
+    width: 1.25rem;
+    height: 1.25rem;
+
+    border-radius: 0.375rem;
+
+    padding: 0;
+    border: none;
+    outline: 1px solid var(--border);
+
+    cursor: pointer;
+  }
+
+  /* Currently targeting Chrome only */
+  input::-webkit-color-swatch-wrapper {
+    outline: none;
+    padding: 0;
+  }
+
+  input::-webkit-color-swatch {
+    outline: none;
+    border: none;
+  }
+</style>
