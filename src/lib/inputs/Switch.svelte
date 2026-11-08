@@ -33,7 +33,7 @@
   <div class="switch-label-container">
     <label for={inputId}>
       {label}
-      <div>
+      <div class="base-input">
         <span class="switch-status">{isChecked ? "On" : "Off"}</span>
         <div class="switch">
           <input
@@ -69,11 +69,6 @@
     gap: 0.375rem;
 
     padding: 0.375rem;
-
-    background-color: var(--mantle);
-
-    border: 1px solid var(--border);
-    border-radius: 0.75rem;
 
     color: var(--subtext-1);
 

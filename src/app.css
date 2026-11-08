@@ -135,6 +135,12 @@
   button:active {
     outline: none;
   }
+
+  .base-input {
+    background-color: var(--mantle);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+  }
 }
 
 body:has(#app),

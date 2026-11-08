@@ -18,7 +18,7 @@
       <span class="required">*</span>
     {/if}
   </label>
-  <div>
+  <div class="base-input">
     <input
       defaultValue={defaultColour}
       {name}
@@ -49,11 +49,6 @@
     gap: 0.375rem;
 
     padding: 0 0.375rem 0 0.375rem;
-
-    background-color: var(--mantle);
-
-    border-radius: 0.75rem;
-    border: 1px solid var(--border);
 
     line-height: 1rem;
   }

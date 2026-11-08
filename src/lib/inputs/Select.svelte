@@ -24,7 +24,7 @@
       <span class="required">*</span>
     {/if}
   </label>
-  <select id={selectId} {name}>
+  <select class="base-input" id={selectId} {name}>
     <button>
       <selectedcontent></selectedcontent>
       <ChevronDownIcon class="picker-icon" size={16} />
@@ -54,11 +54,6 @@
     padding: 0.5rem;
 
     line-height: 1rem;
-
-    background-color: var(--mantle);
-
-    border: 1px solid var(--border);
-    border-radius: 0.75rem;
 
     cursor: pointer;
   }

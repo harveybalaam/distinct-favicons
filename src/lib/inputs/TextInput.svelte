@@ -50,6 +50,7 @@
   </label>
   <input
     aria-describedby={hint && hintId}
+    class="base-input"
     id={inputId}
     {name}
     pattern={required ? requiredPattern : null}
@@ -73,11 +74,6 @@
     padding: 0.5rem;
 
     line-height: 1rem;
-
-    background-color: var(--mantle);
-
-    border: 1px solid var(--border);
-    border-radius: 0.75rem;
   }
 
   .text-input > input:user-invalid {
