@@ -102,9 +102,30 @@
     outline-offset: -1px;
   }
 
-  input {
+  input,
+  label,
+  meter,
+  progress,
+  select {
     color: var(--text);
+    font-family: inherit;
+  }
+
+  label {
+    display: flex;
+
+    color: var(--subtext-1);
     font-size: 0.875rem;
+    font-weight: 700;
+  }
+
+  label:not(:has(input)) {
+    gap: 0.125rem;
+    margin-bottom: 0.5rem;
+  }
+
+  label > span.required {
+    color: var(--red);
   }
 
   input::placeholder {

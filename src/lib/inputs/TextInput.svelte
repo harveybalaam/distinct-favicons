@@ -45,7 +45,7 @@
   <label for={inputId}>
     {label}
     {#if required}
-      <span>*</span>
+      <span class="required">*</span>
     {/if}
   </label>
   <input
@@ -67,17 +67,12 @@
   .text-input {
     display: flex;
     flex-direction: column;
-
-    color: var(--subtext-1);
-
-    font-family: var(--font-family);
   }
 
   .text-input > input {
     padding: 0.5rem;
 
     line-height: 1rem;
-    font-family: var(--font-family);
 
     background-color: var(--mantle);
 
@@ -102,19 +97,5 @@
 
     font-size: 0.875rem;
     font-style: italic;
-  }
-
-  label {
-    display: flex;
-    gap: 0.125rem;
-
-    margin-bottom: 0.5rem;
-
-    font-size: 0.875rem;
-    font-weight: 700;
-  }
-
-  label > span {
-    color: var(--red);
   }
 </style>

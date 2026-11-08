@@ -21,7 +21,7 @@
   <label for={selectId}>
     {label}
     {#if required}
-      <span>*</span>
+      <span class="required">*</span>
     {/if}
   </label>
   <select id={selectId} {name}>
@@ -61,22 +61,6 @@
     border-radius: 0.75rem;
 
     cursor: pointer;
-  }
-
-  label {
-    display: flex;
-    gap: 0.125rem;
-
-    margin-bottom: 0.5rem;
-
-    color: var(--subtext-1);
-
-    font-size: 0.875rem;
-    font-weight: 700;
-  }
-
-  label > span {
-    color: var(--red);
   }
 
   @supports (appearance: base-select) {

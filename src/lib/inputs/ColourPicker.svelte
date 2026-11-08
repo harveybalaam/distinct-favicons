@@ -15,7 +15,7 @@
   <label for={inputId}>
     {label}
     {#if required}
-      <span>*</span>
+      <span class="required">*</span>
     {/if}
   </label>
   <div>
@@ -88,18 +88,5 @@
   input::-webkit-color-swatch {
     outline: none;
     border: none;
-  }
-
-  label {
-    display: flex;
-    gap: 0.125rem;
-
-    margin-bottom: 0.5rem;
-
-    font-weight: 700;
-  }
-
-  label > span {
-    color: var(--red);
   }
 </style>

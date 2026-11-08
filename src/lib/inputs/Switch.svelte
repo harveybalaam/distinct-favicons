@@ -81,15 +81,8 @@
   }
 
   .switch-label-container > label {
-    display: flex;
     flex-direction: column;
     gap: 0.5rem;
-
-    color: var(--subtext-1);
-
-    font-size: 0.875rem;
-    font-weight: 700;
-
     cursor: pointer;
   }
 
