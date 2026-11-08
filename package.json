@@ -31,6 +31,7 @@
     "@storybook/svelte-vite": "^10.6.2",
     "@sveltejs/vite-plugin-svelte": "^7.3.0",
     "@tsconfig/svelte": "^5.0.8",
+    "@types/chrome": "^0.3.7",
     "@types/node": "^24.13.3",
     "@vitest/browser-playwright": "5.0.4",
     "@vitest/coverage-v8": "5.0.4",
