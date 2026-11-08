@@ -36,7 +36,7 @@
         <Switch defaultChecked label="Status" name="enabled" />
       </div>
       <TextInput
-        hint="The regex pattern to match URLs against"
+        hint="Determines which URL(s) the rule will apply to"
         label="Pattern"
         monospace
         name="pattern"
