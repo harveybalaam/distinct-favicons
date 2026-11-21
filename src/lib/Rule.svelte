@@ -25,8 +25,9 @@
     <span class="favicon-rule-pattern">{rulePattern}</span>
   </div>
   <Switch
-    name="enabled"
     ariaLabel={`${enabled ? "Disable" : "Enable"} ${name}`}
+    defaultChecked={enabled}
+    name="enabled"
   />
 </div>
 
