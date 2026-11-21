@@ -2,10 +2,13 @@
   import Select, { type SelectOption } from "./inputs/Select.svelte";
   import Button from "./buttons/Button.svelte";
   import ColourPicker from "./inputs/ColourPicker.svelte";
+  import { CreateRuleSchema } from "../schemas/rule";
   import { SaveIcon } from "@lucide/svelte";
   import Switch from "./inputs/Switch.svelte";
   import TextInput from "./inputs/TextInput.svelte";
   import TitleBar from "./TitleBar.svelte";
+  import { buildRule } from "../utils/build-rule";
+  import { getRules } from "../utils/get-rules";
   import { nav } from "../utils/nav.svelte";
 
   const alterationTypes: SelectOption[] = [
@@ -19,10 +22,24 @@
     },
   ] as const;
 
-  const handleOnSubmit = (
+  const handleOnSubmit = async (
     event: SubmitEvent & { currentTarget: EventTarget & HTMLFormElement },
   ) => {
     event.preventDefault();
+
+    const rawRuleData = Object.fromEntries(new FormData(event.currentTarget));
+
+    const result = CreateRuleSchema.safeParse(rawRuleData);
+    if (!result.success) {
+      return;
+    }
+
+    const rules = await getRules();
+
+    const newRule = buildRule(result.data);
+    await browser.storage.local.set({ rules: [...rules, newRule] });
+
+    nav.back();
   };
 </script>
 

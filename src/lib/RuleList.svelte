@@ -2,13 +2,17 @@
   import { FunnelIcon, PlusIcon } from "@lucide/svelte";
   import Button from "./buttons/Button.svelte";
   import IconButton from "./buttons/IconButton.svelte";
+  import Rule from "./Rule.svelte";
   import Search from "./Search.svelte";
   import TitleBar from "./TitleBar.svelte";
+  import { getRules } from "../utils/get-rules";
   import { nav } from "../utils/nav.svelte";
 
   const handleNewRuleClick = () => {
     nav.push({ name: "create" });
   };
+
+  const rules = getRules();
 </script>
 
 <div class="rules-list">
@@ -29,9 +33,21 @@
     </TitleBar>
     <Search />
   </div>
-  <ul>
-    <li></li>
-  </ul>
+  {#await rules}
+    <p>Loading rules...</p>
+  {:then rules}
+    <ul>
+      {#each rules as rule}
+        <li>
+          <Rule
+            enabled={rule.enabled}
+            name={rule.name}
+            rulePattern={rule.pattern}
+          />
+        </li>
+      {/each}
+    </ul>
+  {/await}
 </div>
 
 <style>
