@@ -11,11 +11,11 @@
   const alterationTypes: SelectOption[] = [
     {
       name: "Colour Fill",
-      value: "colour-fill",
+      value: "colourFill",
     },
     {
       name: "Colour Overlay",
-      value: "colour-overlay",
+      value: "colourOverlay",
     },
   ] as const;
 
