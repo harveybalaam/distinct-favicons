@@ -52,7 +52,14 @@
   </div>
 {:else}
   <label class="switch">
-    <input aria-label={ariaLabel} {name} role="switch" type="checkbox" />
+    <input
+      aria-label={ariaLabel}
+      {defaultChecked}
+      {name}
+      onchange={handleOnChange}
+      role="switch"
+      type="checkbox"
+    />
     <span class="slider"></span>
   </label>
 {/if}
